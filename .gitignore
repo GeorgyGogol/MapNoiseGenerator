@@ -1,0 +1,10 @@
+*.user
+.OutDir/
+.vs/
+.*/
+Binaries/*/*.exp
+Binaries/*/*.lib
+Binaries/*/*.pdb
+Debug/
+Release/
+
