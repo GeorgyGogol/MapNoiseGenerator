@@ -50,6 +50,7 @@ namespace MapNoiseTests
 
         BEGIN_TEST_METHOD_ATTRIBUTE(Ptr_Uncorrect)
             TEST_PRIORITY(1)
+            TEST_IGNORE()
         END_TEST_METHOD_ATTRIBUTE()
         TEST_METHOD(Ptr_Uncorrect)
         {

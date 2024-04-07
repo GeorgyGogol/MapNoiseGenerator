@@ -17,4 +17,11 @@
     <ClCompile Include="..\Sources\MapNoise.cpp" />
     <ClCompile Include="..\Sources\MapNoiseGenerator.cpp" />
   </ItemGroup>
+  <!-- Resources -->
+  <ItemGroup>
+    <ClInclude Include="..\resources\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\resources\MapNoiseGenerator.rc" />
+  </ItemGroup>
 </Project>

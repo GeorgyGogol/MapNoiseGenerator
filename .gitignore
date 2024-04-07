@@ -7,4 +7,5 @@ Binaries/*/*.lib
 Binaries/*/*.pdb
 Debug/
 Release/
+*.aps
 

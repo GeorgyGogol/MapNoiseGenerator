@@ -13,7 +13,7 @@ namespace NoiseGeneratorClass
                 "Unexcepted value at (" +
                 std::to_string(x) + ", " +
                 std::to_string(y) + ") val: " +
-                std::to_string(val);
+                std::to_string(value);
             return ts::charToWChar(mes.c_str());
         }
 

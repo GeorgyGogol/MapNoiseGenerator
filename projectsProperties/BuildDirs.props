@@ -12,7 +12,7 @@
     <OutDir>$(SolutionDir)\.BuildDir\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <OutDir>$(SolutionDir)\Binaries\$(Platform)\</OutDir>
+    <OutDir>$(SolutionDir)\binaries\$(Platform)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup />
   <ItemGroup />
