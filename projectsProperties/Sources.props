@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <!-- include Path -->
+  <PropertyGroup>
+    <IncludePath>$(IncludePath);$(ProjectDir)..\include;$(ProjectDir)..\Sources;</IncludePath>
+  </PropertyGroup>
+  <!-- include -->
+  <ItemGroup>
+    <ClInclude Include="..\Include\framework.h" />
+    <ClInclude Include="..\Include\MapNoise.h" />
+    <ClInclude Include="..\Include\MapNoiseGen.h" />
+    <ClInclude Include="..\Include\MapNoiseGenerator.h" />
+    <ClInclude Include="..\Include\MapNoiseInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Sources\MapNoise.cpp" />
+    <ClCompile Include="..\Sources\MapNoiseGenerator.cpp" />
+  </ItemGroup>
+</Project>
