@@ -3,14 +3,14 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace MapNoiseGeneratorLibTest
+namespace MapNoiseTests
 {
-    BEGIN_TEST_CLASS_ATTRIBUTE()
-        TEST_PRIORITY(2)
-    END_TEST_CLASS_ATTRIBUTE()
-    TEST_CLASS(MapNoiseTests_Functions)
+    TEST_CLASS(ClassFunctions)
     {
     public:
+        BEGIN_TEST_METHOD_ATTRIBUTE(getValueAt_Correct)
+            TEST_PRIORITY(3)
+        END_TEST_METHOD_ATTRIBUTE()
         TEST_METHOD(getValueAt_Correct)
         {
             mng::MapNoise map(5, 5);

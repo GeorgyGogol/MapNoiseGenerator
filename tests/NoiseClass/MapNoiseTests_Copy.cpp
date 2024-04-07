@@ -3,13 +3,14 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace MapNoiseGeneratorLibTest
+namespace MapNoiseTests
 {
-    BEGIN_TEST_CLASS_ATTRIBUTE()
-        TEST_PRIORITY(1)
-    END_TEST_CLASS_ATTRIBUTE()
     TEST_CLASS(MapNoiseTests_Copy)
     {
+    public:
+        BEGIN_TEST_METHOD_ATTRIBUTE(Base)
+            TEST_PRIORITY(0)
+        END_TEST_METHOD_ATTRIBUTE()
         TEST_METHOD(Base) {
             mng::MapNoise origin(5, 15);
             mng::MapNoise map(origin);
@@ -18,7 +19,10 @@ namespace MapNoiseGeneratorLibTest
             Assert::AreEqual(origin.getWidth(), map.getWidth(), L"Width must be equal");
         }
 
-        TEST_METHOD(Equal)
+        BEGIN_TEST_METHOD_ATTRIBUTE(EqualOperand)
+            TEST_PRIORITY(0)
+        END_TEST_METHOD_ATTRIBUTE()
+        TEST_METHOD(EqualOperand)
         {
             mng::MapNoise origin(15, 5);
             mng::MapNoise map = origin;
@@ -27,6 +31,9 @@ namespace MapNoiseGeneratorLibTest
             Assert::AreEqual(origin.getWidth(), map.getWidth(), L"Width must be equal");
         }
 
+        BEGIN_TEST_METHOD_ATTRIBUTE(Move)
+            TEST_PRIORITY(0)
+        END_TEST_METHOD_ATTRIBUTE()
         TEST_METHOD(Move) {
             auto SomeCreateMethod = [](int W, int H) { return std::move(mng::MapNoise(W, H)); };
 

@@ -4,6 +4,7 @@
   <!-- include Path -->
   <PropertyGroup>
     <IncludePath>$(IncludePath);$(ProjectDir)..\tests;$(ProjectDir)..\tests\NoiseClass;$(ProjectDir)..\tests\NoiseGeneratorClass;</IncludePath>
+    <ExternalIncludePath>$(ExternalIncludePath);$(ProjectDir)..\include</ExternalIncludePath>
   </PropertyGroup>
   <!-- include -->
   <ItemGroup>
@@ -11,5 +12,7 @@
     <ClCompile Include="..\Tests\NoiseClass\MapNoiseTests_Create.cpp" />
     <ClCompile Include="..\Tests\NoiseClass\MapNoiseTests_Functions.cpp" />
     <ClCompile Include="..\Tests\NoiseGeneratorClass\MapNoiseGeneratorTests.cpp" />
+    <ClInclude Include="..\Tests\pch.h" />
+    <ClCompile Include="..\Tests\pch.cpp" />
   </ItemGroup>
 </Project>

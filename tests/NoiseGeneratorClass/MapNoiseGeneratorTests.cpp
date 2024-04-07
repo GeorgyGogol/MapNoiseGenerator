@@ -1,16 +1,26 @@
 #include "pch.h"
-#include "MapNoise.h"
+#include "MapNoiseGenerator.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace MapNoiseGeneratorLibTest
+namespace NoiseGeneratorClass
 {
-    BEGIN_TEST_CLASS_ATTRIBUTE()
-        TEST_PRIORITY(1)
-    END_TEST_CLASS_ATTRIBUTE()
-    TEST_CLASS(MapNoiseGeneratorTests)
+    TEST_CLASS(GenerateMapTests)
     {
+    private:
+        wchar_t* UncorrectValueMessage(int x, int y, int value) {
+            std::string mes =
+                "Unexcepted value at (" +
+                std::to_string(x) + ", " +
+                std::to_string(y) + ") val: " +
+                std::to_string(val);
+            return ts::charToWChar(mes.c_str());
+        }
+
     public:
+        BEGIN_TEST_METHOD_ATTRIBUTE(WorkCase_One)
+            TEST_PRIORITY(0)
+        END_TEST_METHOD_ATTRIBUTE()
         TEST_METHOD(WorkCase_One)
         {
             mng::MapNoiseGenInfo mapInfo;
@@ -30,14 +40,10 @@ namespace MapNoiseGeneratorLibTest
                 for (int x = 0; x < mapInfo.Width; ++x) {
                     int val = map.getValueAt(x, y);
                     
-                    std::string mes =
-                        "At (" +
-                        std::to_string(x) + ", " +
-                        std::to_string(y) + ") val: " +
-                        std::to_string(val);
+
                     
-                    Assert::IsTrue(val > mapInfo.MinValue, charToWChar(mes.c_str()));
-                    Assert::IsTrue(val < mapInfo.MaxValue, charToWChar(mes.c_str()));
+                    Assert::IsTrue(val > mapInfo.MinValue, UncorrectValueMessage(x, y, val));
+                    Assert::IsTrue(val < mapInfo.MaxValue, UncorrectValueMessage(x, y, val));
                 }
             }
             
